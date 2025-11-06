@@ -1,0 +1,14 @@
+html {
+    font-size: 4rem;
+}
+img {
+    width: 100%;
+}
+
+details > summary {
+    list-style-type: 'ℹ️';
+}
+
+details[open] > summary {
+    list-style-type: 'ℹ️';
+}

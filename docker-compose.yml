@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: boulder-postgres
+    environment:
+      POSTGRES_USER: bouldern
+      POSTGRES_PASSWORD: bouldern
+      POSTGRES_DB: bouldern 
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/postgres/data
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+
+networks:
+  default:
+    driver: bridge
+

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Route hinzufügen</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" th:href="@{/styles/styles.css}">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body class="p-2">
+<h1>Route hinzufügen</h1>
+<form action="#" th:action="@{/add-route}" th:object="${routeData}" method="POST" class="pt-1">
+ <div class="form-group mb-2">
+  <label class="form-check-label" for="flash"> Flash </label>
+  <input id="flash" type="checkbox" th:field="*{flash}" class="form-check-input"/>
+ </div>
+ <div class="form-group mb-2">
+ <label for="schwierigkeit"> Schwierigkeit </label>
+  <select th:field="*{schwierigkeit}" id="schwierigkeit" class="form-control">
+  <option th:each="i : ${#numbers.sequence(0, 7)}" th:value="${i}" th:text="${i}">
+  </option>
+  <option value="?">?</option>
+ </select>
+ </div>
+ <div class="form-group mb-2">
+  <details>
+   <summary>
+    Wand
+    <select th:field="*{wand}" id="wand" class="form-control">
+     <option th:each="i : ${T(lgbt.lia.bouldertracker.data.Wand).values()}" th:value="${i}" th:text="${i.name()}"></option>
+    </select>
+   </summary>
+   <img th:src="@{/img/fliegerhalle-layout.avif}">
+  </details>
+ </div>
+ <div class="form-group mb-2">
+ <label for="farbe"> Farbe </label>
+  <select th:field="*{farbe}" id="farbe" class="form-control">
+   <option th:each="i : ${T(lgbt.lia.bouldertracker.data.Farbe).values()}" th:value="${i}" th:text="${i.name()}"></option>
+  </select>
+ </div>
+ <div class="form-group">
+  <input type="submit" class="btn-primary btn mb-2" value="Route geschafft!">
+ </div>
+</form>
+</body>
+</html>

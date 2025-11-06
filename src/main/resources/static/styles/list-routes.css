@@ -1,0 +1,64 @@
+.routen-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.routen-beschreibung {
+    background-color: #f0f0f0;
+    width: inherit;
+}
+
+.routen-schwierigkeit {
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.75rem;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.routen-content {
+    width: inherit;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+}
+
+.routen-border {
+    width: 30px;
+}
+.Rot {
+    background-color: red;
+}
+.Grün {
+    background-color: green;
+}
+.Dunkelblau {
+    background-color: blue;
+}
+.Türkis {
+    background-color: teal;
+}
+.TürkisSchwarz {
+    background: linear-gradient(to bottom, #4de3de 50%, #323333 50%);
+}
+.TürkisHolz {
+    background: linear-gradient(to bottom, #4de3de 50%, saddlebrown 50%);
+}
+.Schwarz {
+    background-color: black;
+}
+.Gelb {
+    background-color: yellow;
+}
+.Pink {
+    background-color: hotpink;
+}
+.Violett {
+    background-color: darkviolet;
+}
+.RotWeiss {
+    background: linear-gradient(to bottom, white 50%, red 50%);
+}
+.Orange {
+    background-color: orange;
+}
