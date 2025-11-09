@@ -1,8 +1,9 @@
 package lgbt.lia.bouldertracker.controller;
 
-import lgbt.lia.bouldertracker.data.RouteDTO;
-import lgbt.lia.bouldertracker.data.RouteService;
+import lgbt.lia.bouldertracker.dto.RouteDTO;
+import lgbt.lia.bouldertracker.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

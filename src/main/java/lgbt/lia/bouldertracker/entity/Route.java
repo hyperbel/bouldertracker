@@ -1,6 +1,8 @@
-package lgbt.lia.bouldertracker.data;
+package lgbt.lia.bouldertracker.entity;
 
 import jakarta.persistence.*;
+import lgbt.lia.bouldertracker.data.Farbe;
+import lgbt.lia.bouldertracker.data.Wand;
 import lombok.*;
 
 import java.time.LocalDate;

@@ -1,5 +1,8 @@
-package lgbt.lia.bouldertracker.data;
+package lgbt.lia.bouldertracker.service;
 
+import lgbt.lia.bouldertracker.entity.Route;
+import lgbt.lia.bouldertracker.repository.RouteRepository;
+import lgbt.lia.bouldertracker.dto.RouteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.ApplicationScope;
@@ -14,7 +17,7 @@ public class RouteService {
     private RouteRepository routeRepository;
 
     public void completed(RouteDTO routeData) {
-        Route route = new Route.RouteBuilder()
+        Route route = Route.builder()
                 .flash(routeData.isFlash())
                 .wand(routeData.getWand())
                 .farbe(routeData.getFarbe())
@@ -26,7 +29,7 @@ public class RouteService {
 
     public List<RouteDTO> getAll() {
         return routeRepository.findAll().stream()
-                .map(route -> new RouteDTO.RouteDTOBuilder()
+                .map(route -> RouteDTO.builder()
                         .completionDate(route.getCompletionDate())
                         .farbe(route.getFarbe())
                         .flash(route.isFlash())
