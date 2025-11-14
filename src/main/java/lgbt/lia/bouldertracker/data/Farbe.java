@@ -10,6 +10,7 @@ public enum Farbe {
     Schwarz,
     Gelb,
     Pink,
+    Lavendel,
     Violett,
     RotWeiss,
     Orange,
